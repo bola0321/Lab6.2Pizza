@@ -1,8 +1,12 @@
 package co.grandcircus.pizzaOne;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -14,11 +18,19 @@ public class PizzaController {
 		return "pizzaBuilder";
 	}
 	@PostMapping("/pizzaBuilder")
-	public String submitPizzaBuilder(@RequestParam String size, 
-									@RequestParam int toppings, 
-									@RequestParam(defaultValue = "false") boolean glutenfree, 
-									@RequestParam String special, 
+	public String submitPizzaBuilder(@Valid CustomPizzaSubmission pizza, 
+									BindingResult bindingresult,
 									Model model) {
+		
+		if(bindingresult.hasErrors()) {
+			model.addAttribute("errString", "Please enter a topping amount 1-10");
+			return "pizzaBuilder";
+		}
+		String size = pizza.getSize();
+		int toppings = pizza.getToppings();
+		boolean glutenfree = pizza.isGlutenfree();
+		String special = pizza.getSpecial();
+		
 		model.addAttribute("size", size);
 		model.addAttribute("toppings", toppings);
 		model.addAttribute("special", special);

@@ -1,0 +1,45 @@
+@charset "ISO-8859-1";
+
+body{
+	
+	width: 100vw;
+	min-height: 100vh;
+	background-size: 300px 300px;
+	background-position:center;
+	background-repeat: repeat;
+}
+
+.header {
+	padding: 20px;
+	text-align: center;
+	background: rgb(210, 48, 3);
+	color: white;
+	font-size: 30px;
+  }
+
+.container {
+    display: flex;
+	margin-top: 15px;
+	gap: 20px;
+}
+
+ .column {
+    flex: 1;
+
+	border: solid 6px skyblue;
+	box-sizing: border-box;
+    background: #f2f2f2;
+    
+ }
+
+ .container  h3, h4{
+	text-align: center;
+ }
+ 
+ .aboutpizza, .review-form{
+	margin-top: 15px;
+	gap: 20px;
+	border: solid 6px skyblue;
+	box-sizing: border-box;
+    background: #f2f2f2;
+ }

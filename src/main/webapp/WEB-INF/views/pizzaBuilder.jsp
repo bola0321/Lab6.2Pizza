@@ -3,12 +3,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="style.css">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Custom Pizza Builder</title>
+
+	<style type ="text/css">
+		body{
+		background-image: url("images/pizza-back-blue.jpg")
+		}
+	</style>
 </head>
 <body>
+	<div class="header">
 	<h1>Build Your Own Pizza</h1>
-        <div class="aboutform">
+	</div>
+	
+	<h3>${errString}</h3>
+        <div class="aboutpizza">
+        	
             <form action="/pizzaBuilder" method="post">
             
                 <label for="size">Size</label>
@@ -19,7 +31,7 @@
                 </select>
 
                 <label for="toppings">How many toppings?</label>
-                <input type="text" id="toppings" name="toppings" placeholder="number of toppings">
+                <input type="text" step = "1" id="toppings" name="toppings" placeholder="number of toppings">
                 <br>
                 
                 <input type="checkbox" id="glutenfree" name="glutenfree" value="true">

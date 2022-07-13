@@ -3,24 +3,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="style.css">
 <meta charset="ISO-8859-1">
 <title>Leave a Review</title>
+
+	<style type ="text/css">
+		body{
+		background-image: url("images/pizza-back-blue.jpg")
+		}
+	</style>
 </head>
 <body>
+	
 
         <div class="review-form">
             <form action="/reviewForm" method="post">
 
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Type your name:">
+                <label for="name">Name: *(required)</label>
+                <input type="text" id="name" name="name" required placeholder="Type your name:">
 				<br>
                 <label for="subject">Comment: </label>
-                <textarea id="subject" name="subject" placeholder="Tell us how we did!" style="height:100px"></textarea>
+                <textarea id="subject" name="subject" placeholder="Tell us how we did!" style="height:100px" required minlength="5" ></textarea>
                 
 		         <div>
 		         	Leave us a rating!
 		         	<br>
-			        <input type="radio" id="one-star" name="rating" value="1">
+			        <input type="radio" id="one-star" name="rating" value="1" required>
 					<label for="one-star">1</label><br>
 					
 					<input type="radio" id="two-star" name="rating" value="2">
